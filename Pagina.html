@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jerseys Históricos de la Champions League</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #faf8f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .jersey {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 15px;
+            width: 250px;
+        }
+        .jersey img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .formulario {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .formulario input, .formulario textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .formulario button {
+            background-color: #003366;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .boton-siguiente button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+}
+.boton-siguiente button:hover {
+    background-color: #0055aa;
+}
+#errores {
+    color: red;
+    margin-top: 20px;
+    font-size: 14px;
+}
+#errores ul {
+    list-style-type: none;
+    padding: 0;
+}
+#errores li {
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+    <header>Jerseys Históricos de la Champions League</header>
+    <div class="container">
+        <div class="jersey">
+            <img src="Milan 88-89.jpg" alt="AC Milan 1988-89">
+            <h3>AC Milan 1988-89</h3>
+            <p>El jersey clásico con rayas rojas y negras, usado cuando ganaron su tercera Champions League. Liderados por el mitico Bastoni, y un joven Paolo Maldini.</p>
+        </div>
+        <div class="jersey">
+            <img src="Manchester United 98-99.jpg" alt="Manchester United 1998-99">
+            <h3>Manchester United 1998-99</h3>
+            <p>El mítico jersey rojo de la remontada en la final contra el Bayern en el Camp Nou. En el minuto 90 seguian abajo en el marcador, y milagrosamente le dieron la vuelta para conseguir la segunda champions de su historia.</p>
+        </div>
+        <div class="jersey">
+            <img src="Real Madrid 2001-2002.jpg" alt="Real Madrid 2001-02">
+            <h3>Real Madrid 2001-02</h3>
+            <p>El icónico jersey blanco con el que Zidane marcó su inolvidable volea ante el Bayer Leverkusen. Y como cereza del pastel ganar la decima copa de europa de su historia.</p>
+        </div>
+        <div class="jersey">
+            <img src="Barca 2008-2009.jpg" alt="Barcelona 2008-2009">
+            <h3>Barcelona 2008-2009</h3>
+            <p>No podía faltar, la mitica playera del mejor equipo de todos los tiempos, comandado por Messi, Etoó, Henry, Xavi, Iniesta. Consiguieron el sextete en un año historico. Para los libros de la historia.</p>
+        </div>
+        <div class="jersey">
+            <img src="Inter 2009-2010.jpeg" alt="Inter 2009-2010">
+            <h3>Inter 2009-2010</h3>
+            <p>Jersey mitica de la ultima Champions de los nerazzurri. Temporada fantastica en la que ganaron el triplete con un impecable Diego Milito.</p>
+        </div>
+        <div class="jersey">
+            <img src="Nottinham 1979-1980.jpg" alt="Nottinham 1979-80">
+            <h3>Nottinham Forest 1979-80</h3>
+            <p>El jersey rojo clásico con el logo de Adidas y el escudo del Nottingham Forest en el pecho. Fue usado en la histórica temporada en la que el equipo ganó su segunda Copa de Europa consecutiva, consolidando su legado en la historia del fútbol.</p>
+        </div>
+        <div class="jersey">
+            <img src="Ajax 1973.png" alt="Ajax 1973">
+            <h3>Ajax 1973</h3>
+            <p>El icónico jersey blanco con la franja roja vertical en el centro, símbolo del legendario Ajax de Johan Cruyff. En 1973, el equipo conquistó su tercera Copa de Europa consecutiva, consolidando su dominio del fútbol total y dejando una huella imborrable en la historia del deporte.</p>
+    </div>
+    <div class="jersey">
+        <img src="Bayern 2020-2021.jpg" alt="Bayern 2020-2021">
+        <h3>Bayern 2019-2020</h3>
+        <p>El gran Bayern Munich. Logro conquistar absolutamente todo en el año mas dificil debido a la pandemia, ganando su primer sextete.</p>
+    </div>
+
+    <div class="formulario">
+        <h3>Envíanos tu jersey favorito</h3>
+        <form id="formulario" onsubmit="return validarFormulario()">
+            <input type="text" id="nombre" placeholder="Tu nombre" required>
+            <input type="email" id="correo" placeholder="Tu correo" required>
+            <textarea id="mensaje" placeholder="Tu mensaje" rows="4" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="errores"></div>
+    </div>    
+
+    <div class="boton-siguiente">
+        <a href="pagina2.html">
+            <button>Siguiente Página →</button>
+        </a>
+    </div>
+    <script>
+        function validarFormulario() {
+            // Limpiar cualquier mensaje de error anterior
+            document.getElementById("errores").innerHTML = "";
+    
+            let errores = [];
+            
+            // Obtener los valores del formulario
+            let nombre = document.getElementById("nombre").value;
+            let correo = document.getElementById("correo").value;
+            let mensaje = document.getElementById("mensaje").value;
+    
+            // Validación del nombre (no vacío)
+            if (nombre.trim() === "") {
+                errores.push("El campo 'Nombre' es obligatorio.");
+            }
+    
+            // Validación del correo (formato de correo válido)
+            let regexCorreo = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!regexCorreo.test(correo)) {
+                errores.push("El correo electrónico no es válido.");
+            }
+    
+            // Validación del mensaje (no vacío)
+            if (mensaje.trim() === "") {
+                errores.push("El campo 'Mensaje' es obligatorio.");
+            }
+    
+            // Mostrar los errores si existen
+            if (errores.length > 0) {
+                let listaErrores = "<ul>";
+                errores.forEach(function(error) {
+                    listaErrores += "<li>" + error + "</li>";
+                });
+                listaErrores += "</ul>";
+                document.getElementById("errores").innerHTML = listaErrores;
+                return false; // Evitar el envío del formulario
+            }
+    
+            // Si todo está bien, el formulario se enviará
+            return true;
+        }
+    </script>
+    
+
+</body>
+</html>
